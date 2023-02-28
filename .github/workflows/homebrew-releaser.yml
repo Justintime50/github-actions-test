@@ -7,7 +7,7 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Release my project to my Homebrew tap
-        uses: Justintime50/homebrew-releaser@c6f3f7004b4348388c6d2067ea2db351f0fa4a81
+        uses: Justintime50/homebrew-releaser@73226a7115c763b0a238172f9584d5737c74e1f6
         with:
           # The name of the homebrew tap to publish your formula to as it appears on GitHub.
           # Required - strings
@@ -20,7 +20,7 @@ jobs:
 
           # The GitHub Token (saved as a repo secret) that has `repo` permissions for the homebrew tap you want to release to.
           # Required - string
-          # github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
+          github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
 
           # Git author info used to commit to the homebrew tap.
           # Defaults are shown - strings
