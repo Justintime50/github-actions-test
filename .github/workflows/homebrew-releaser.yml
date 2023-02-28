@@ -1,0 +1,40 @@
+on:
+  push:
+
+jobs:
+  homebrew-releaser:
+    runs-on: ubuntu-latest
+    name: homebrew-releaser
+    steps:
+      - name: Release my project to my Homebrew tap
+        uses: Justintime50/homebrew-releaser@10ac063021761de4b1b25f843d2050a674f08c5e
+        with:
+          # The name of the homebrew tap to publish your formula to as it appears on GitHub.
+          # Required - strings
+          homebrew_owner: Justintime50
+          homebrew_tap: homebrew-formulas
+
+          # The name of the folder in your homebrew tap where formula will be committed to.
+          # Default is shown - string
+          formula_folder: formula
+
+          # The GitHub Token (saved as a repo secret) that has `repo` permissions for the homebrew tap you want to release to.
+          # Required - string
+          github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
+
+          # Git author info used to commit to the homebrew tap.
+          # Defaults are shown - strings
+          commit_owner: homebrew-releaser
+          commit_email: homebrew-releaser@example.com
+
+          # Custom install command for your formula.
+          # Required - string
+          install: 'bin.install "src/my-script.sh" => "my-script"'
+
+          # Skips committing the generated formula to a homebrew tap (useful for local testing).
+          # Default is shown - boolean
+          skip_commit: true
+
+          # Logs debugging info to console.
+          # Default is shown - boolean
+          debug: true
