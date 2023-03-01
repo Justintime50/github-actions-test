@@ -7,7 +7,7 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Release my project to my Homebrew tap
-        uses: Justintime50/homebrew-releaser@73226a7115c763b0a238172f9584d5737c74e1f6
+        uses: Justintime50/homebrew-releaser@52ad802ba66ab93f428c79f7ddb5ed773e05ec88
         with:
           # The name of the homebrew tap to publish your formula to as it appears on GitHub.
           # Required - strings
@@ -30,6 +30,13 @@ jobs:
           # Custom install command for your formula.
           # Required - string
           install: 'bin.install "src/my-script.sh" => "my-script"'
+          
+          # Adds URL and checksum targets for different OS and architecture pairs. Using this option assumes 
+          # a tar archive exists on your GitHub repo with the following URL pattern (this cannot be customized):
+          # https://github.com/{GITHUB_OWNER}/{REPO_NAME}/releases/download/{TAG}/{REPO_NAME}-{VERSION}-{OPERATING_SYSTEM}-{ARCHITECTURE}.tar.gz'
+          # Darwin AMD pre-existing path example: https://github.com/justintime50/myrepo/releases/download/v1.2.0/myrepo-1.2.0-darwin-amd64.tar.gz
+          # Linux ARM pre-existing path example: https://github.com/justintime50/myrepo/releases/download/v1.2.0/myrepo-1.2.0-linux-arm64.tar.gz
+          target_darwin_amd64: true
 
           # Skips committing the generated formula to a homebrew tap (useful for local testing).
           # Default is shown - boolean
