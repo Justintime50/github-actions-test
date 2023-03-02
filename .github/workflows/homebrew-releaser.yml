@@ -7,7 +7,7 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Release my project to my Homebrew tap
-        uses: Justintime50/homebrew-releaser@9437b2174beae9582543b297a37ac945819b72f5
+        uses: Justintime50/homebrew-releaser@0d2b6abef8073fce851f16e914bbc2d04997d78c
         with:
           # The name of the homebrew tap to publish your formula to as it appears on GitHub.
           # Required - strings
