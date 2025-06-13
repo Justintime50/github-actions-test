@@ -12,7 +12,7 @@ jobs:
           # The name of the homebrew tap to publish your formula to as it appears on GitHub.
           # Required - strings
           homebrew_owner: Justintime50
-          homebrew_tap: homebrew-formulass # TODO: intentionally bad name
+          homebrew_tap: homebrew-formulas
 
           # The GitHub Token (saved as a repo secret) that has `repo` permissions for the homebrew tap you want to release to.
           # Required - string
