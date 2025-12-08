@@ -2,14 +2,13 @@ on:
   push:
   workflow_dispatch: ~
 
-env:
-  HOME: /home/linuxbrew
-
 jobs:
   homebrew-releaser:
     runs-on: ubuntu-latest
     name: homebrew-releaser
     steps:
+      - name: Change ownership of /github/home
+        run: sudo chown -R $(whoami) /github/home
       - name: Release my project to my Homebrew tap
         uses: Justintime50/homebrew-releaser@v3.0.0-rc2
         with:
