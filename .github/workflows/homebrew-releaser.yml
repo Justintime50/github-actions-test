@@ -2,9 +2,6 @@ on:
   push:
   workflow_dispatch: ~
 
-env:
-  HOMEBREW_CACHE: /tmp/homebrew-cache
-
 jobs:
   homebrew-releaser:
     runs-on: ubuntu-latest
