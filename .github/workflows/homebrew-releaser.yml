@@ -8,7 +8,7 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Print home
-        run: echo "$HOME"
+        run: echo "$GITHUB_HOME"
       - name: Release my project to my Homebrew tap
         uses: Justintime50/homebrew-releaser@v3.0.0-rc2
         with:
