@@ -1,3 +1,3 @@
 # GitHub Actions Test
 
-I test GitHub Actions here so I don't blowing up my real projects. Ignore this repo.
+I test GitHub Actions here so I don't blow up my real projects. Ignore this repo.
