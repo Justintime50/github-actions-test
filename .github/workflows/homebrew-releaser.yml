@@ -11,7 +11,8 @@ jobs:
         uses: Justintime50/homebrew-releaser@v3
         with:
           homebrew_owner: Justintime50
-          homebrew_tap: homebrew-formulas
+          homebrew_tap: homebrew-test
+          formula_folder: Formula
           github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
           commit_owner: Justintime50
           commit_email: 39606064+Justintime50@users.noreply.github.com
