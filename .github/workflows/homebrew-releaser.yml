@@ -16,7 +16,7 @@ jobs:
           commit_owner: Justintime50
           commit_email: 39606064+Justintime50@users.noreply.github.com
           custom_tarball: muffinscript
-          update_readme_table: true
+          update_readme_table: false
           install: |
             libexec.install "muffin"
             bin.install_symlink libexec/"muffin/muffin" => "muffin"
