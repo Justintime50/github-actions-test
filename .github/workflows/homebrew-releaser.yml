@@ -8,7 +8,7 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Release my project to my Homebrew tap
-        uses: Justintime50/homebrew-releaser@v3
+        uses: Justintime50/homebrew-releaser@main
         with:
           homebrew_owner: Justintime50
           homebrew_tap: homebrew-test
@@ -16,7 +16,7 @@ jobs:
           commit_owner: Justintime50
           commit_email: 39606064+Justintime50@users.noreply.github.com
           custom_tarball: muffinscript
-          update_readme_table: false
+          update_readme_table: true
           install: |
             libexec.install "muffin"
             bin.install_symlink libexec/"muffin/muffin" => "muffin"
