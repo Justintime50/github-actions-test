@@ -8,39 +8,17 @@ jobs:
     name: homebrew-releaser
     steps:
       - name: Release my project to my Homebrew tap
-        uses: Justintime50/homebrew-releaser@main
+        uses: Justintime50/homebrew-releaser@v3
         with:
-          # The name of the homebrew tap to publish your formula to as it appears on GitHub.
-          # Required - strings
           homebrew_owner: Justintime50
           homebrew_tap: homebrew-formulas
-
-          # The GitHub Token (saved as a repo secret) that has `repo` permissions for the homebrew tap you want to release to.
-          # Required - string
           github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
-
-          # Git author info used to commit to the homebrew tap.
-          # Defaults are shown - strings
-          commit_owner: homebrew-releaser
-          commit_email: homebrew-releaser@example.com
-
-          # Custom install command for your formula.
-          # Required - string
-          install: 'virtualenv_install_with_resources'
-
-          # Allows you to add custom includes inside the formula class, before dependencies and install blocks.
-          # Optional - string
-          formula_includes: 'include Language::Python::Virtualenv'
-
-          # Run 'brew update-python-resources' on the formula to add Python resources.
-          # Docs: https://docs.brew.sh/Python-for-Formula-Authors#python-declarations-for-applications
-          # Default is shown - boolean
-          update_python_resources: true
-
-          # Skips committing the generated formula to a homebrew tap (useful for local testing).
-          # Default is shown - boolean
-          skip_commit: true
-
-          # Logs debugging info to console.
-          # Default is shown - boolean
+          commit_owner: Justintime50
+          commit_email: 39606064+Justintime50@users.noreply.github.com
+          custom_tarball: muffinscript
+          update_readme_table: true
+          install: |
+            libexec.install "muffin"
+            bin.install_symlink libexec/"muffin/muffin" => "muffin"
+          test: 'assert_match "Muffin", shell_output("#{bin}/muffin --version")'
           debug: true
