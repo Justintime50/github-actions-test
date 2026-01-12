@@ -12,7 +12,6 @@ jobs:
         with:
           homebrew_owner: Justintime50
           homebrew_tap: homebrew-test
-          formula_folder: Formula
           github_token: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
           commit_owner: Justintime50
           commit_email: 39606064+Justintime50@users.noreply.github.com
@@ -22,4 +21,5 @@ jobs:
             libexec.install "muffin"
             bin.install_symlink libexec/"muffin/muffin" => "muffin"
           test: 'assert_match "Muffin", shell_output("#{bin}/muffin --version")'
+          skip_checksum: true
           debug: true
